@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission & Vision - Hook & Loop Creations</title>
+  <link rel="stylesheet" href="./assets/css/about-us.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("yeshaconvento@gmail.com"); // Replace with your EmailJS public key
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+      <div class="logo">
+        <img class="logo-img" src="./assets/images/logo.png" alt="logo" width="20%" height="20%" />
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Who We Are</h1>
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTIONS -->
+  <div class="about-sections">
+    <div class="section-buttons">
+      <button class="dropdown-btn" data-section="history">History</button>
+      <button class="dropdown-btn" data-section="mission">Mission</button>
+      <button class="dropdown-btn" data-section="vision">Vision</button>
+      <button class="dropdown-btn" data-section="values">Core Values</button>
+      <button class="dropdown-btn" data-section="acknowledgement">Acknowledgement</button>
+    </div>
+
+    <!-- HISTORY CONTENT -->
+    <div id="history" class="dropdown-content">
+      <br>
+      <p>
+        Look and Hoop Creations was officially established in March 2026 by five dedicated individuals: Ronald Allan SP. Bularin, Ram Justine S. Dalman, John Randel L. Olinares, Yesha Mae P. Convento, and Carl Joaquin Tiburcio. The business was founded with shared vision of promoting crochet as both a creative art and a sustainable source of income.
+      </p>
+      <br>
+      <p>
+        Inspired by the rich cultural background of crochet, the founders aimed to create unique, handmade products while building a community that values craftmanship and creativity. Since its establishment, Look and Hoop Creations continues to combine traditional crochet techniques with modern designs to meet the needs and taste of its customers.
+      </p>
+    </div>
+
+    <!-- MISSION CONTENT -->
+    <div id="mission" class="dropdown-content">
+      <br>
+      <p>
+        To create high-quality, unique crochet products while empowering artisans, practicing sustainability, and
+        delighting our customers.
+      </p>
+    </div>
+
+    <!-- VISION CONTENT -->
+    <div id="vision" class="dropdown-content">
+      <br>
+      <p>
+        To craft timeless crochet creations that inspire creativity and connect communities worldwide.
+      </p>
+    </div>
+
+    <!-- VALUES CONTENT -->
+    <div id="values" class="dropdown-content">
+      <div class="values-container">
+        <div class="value-card">
+          <h3>Quality</h3>
+          <p>
+            We never compromise on the quality of our products and services.
+          </p>
+        </div>
+        <div class="value-card">
+          <h3>Sustainability</h3>
+          <p>
+            We prioritize eco-friendly practices in all aspects of our business.
+          </p>
+        </div>
+        <div class="value-card">
+          <h3>Community</h3>
+          <p>
+            We support and celebrate the artisans and creators in our community.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACKNOWLEDGEMENT CONTENT -->
+    <div id="acknowledgement" class="dropdown-content">
+      <br>
+      <p>
+        We, the founders of Hook & Loop Creations, would like to express our sincere gratitude to everyone who supported us in making this business possible.
+      </p>
+      <br>
+      <p>
+        We are especially thankful to our families, mentors, and friends for their guidance, encouragement, and unwavering support throughout our journey.
+      </p>
+      <br>
+      <p>
+        Lastly, we extend our appreciation to our customers for trusting and supporting our creations. Your support inspires us to continue growing and improving.
+      </p>
+    </div>
+  </div>
+  <!-- CONTACT SECTION -->
+  <section class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-container">
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="Contact Number" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="address" placeholder="Address" required />
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn">Send Message</button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>📍 Address</h3>
+          <p>2003 4th st. Carebi Subdivision,<br />Brgy. San Vicente, Angono, Rizal, 1930</p>
+        </div>
+        <div class="info-card">
+          <h3>📞 Contact</h3>
+          <p>Phone: 09260486718 <br />Mon-Fri: 9AM - 6PM</p>
+        </div>
+        <div class="info-card">
+          <h3>✉️ Email</h3>
+          <p>yeshaconvento@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Hook & Loop Creations. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+      });
+    });
+
+    const contactForm = document.querySelector(".contact-form form");
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const phone = formData.get("phone");
+      const address = formData.get("address");
+      const message = formData.get("message");
+
+      const emailParams = {
+        to_email: "yeshaconvento@gmail.com",
+        from_name: name,
+        from_email: email,
+        phone: phone,
+        address: address,
+        message: message,
+        subject: `New Contact Message from ${name}`
+      };
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert("Message sent successfully!");
+          contactForm.reset();
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert("There was an error sending your message. Please try again.");
+        });
+    });
+
+    // Dropdown functionality
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    const dropdownContents = document.querySelectorAll('.dropdown-content');
+
+    dropdownBtns.forEach(button => {
+      button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        const content = document.getElementById(sectionId);
+
+        // Check if this content is already active
+        const isActive = content.classList.contains('active');
+
+        // Hide all contents and remove active class from all buttons
+        dropdownContents.forEach(section => section.classList.remove('active'));
+        dropdownBtns.forEach(btn => btn.classList.remove('active'));
+
+        // If it wasn't active, show it now
+        if (!isActive) {
+          content.classList.add('active');
+          button.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

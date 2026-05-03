@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmation - Hook & Loop Creations</title>
+  <link rel="stylesheet" href="./assets/css/shop.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-link" aria-label="Go to cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="icon-cart">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 2.25h2.25l1.5 9.75h13.5l1.5-6H8.25m0 0L7.5 6.75m0 0L6.75 2.25m0 4.5H19.5m-13.5 9.75a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm13.5 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+          </svg>
+          <span>Cart</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <div class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="icon-search">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="logo">
+        <img class="logo-img" src="./assets/images/logo.png" alt="logo" width="20%" height="20%" />
+      </div>
+    </nav>
+  </header>
+
+  <main class="cart-landing">
+    <section class="cart-header">
+      <h1>Order Confirmed</h1>
+      <p>Thank you! Your order has been successfully placed.</p>
+    </section>
+
+    <section class="cart-content">
+      <div class="cart-items" id="orderItems"></div>
+
+      <div class="cart-summary">
+        <div class="cart-total">
+          Order Total: Php <span id="orderTotal">0.00</span>
+        </div>
+        <div class="cart-actions">
+          <a href="shop.html" class="cart-button">Back to Shop</a>
+          <a href="index.html" class="cart-button">Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Hook & Loop Creations. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    const orderItemsContainer = document.getElementById("orderItems");
+    const orderTotal = document.getElementById("orderTotal");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+      });
+    });
+
+    function formatPrice(value) {
+      return value.toFixed(2);
+    }
+
+    function renderOrder() {
+      const checkoutData = JSON.parse(localStorage.getItem("checkoutData") || "null");
+      const cartItems = checkoutData?.items || [];
+      const total = checkoutData?.total || 0;
+
+      if (cartItems.length === 0) {
+        orderItemsContainer.innerHTML = '<p class="empty-cart">No order details available. Return to the shop to add items.</p>';
+        orderTotal.textContent = formatPrice(0);
+        return;
+      }
+
+      orderItemsContainer.innerHTML = "";
+      cartItems.forEach((item) => {
+        const orderItem = document.createElement("div");
+        orderItem.className = "cart-item";
+        orderItem.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" />
+          <div class="cart-item-info">
+            <h3>${item.title}</h3>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Php ${formatPrice(item.price)} each</p>
+          </div>
+          <div class="cart-item-price">Php ${formatPrice(item.price * item.quantity)}</div>
+        `;
+        orderItemsContainer.appendChild(orderItem);
+      });
+
+      orderTotal.textContent = formatPrice(total);
+    }
+
+    function updateCartBadge() {
+      const cartItems = JSON.parse(localStorage.getItem("cartItems") || "[]");
+      const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.getElementById("cartBadge");
+      badge.textContent = totalQuantity;
+      badge.style.display = totalQuantity > 0 ? "inline-flex" : "none";
+    }
+
+    renderOrder();
+    updateCartBadge();
+  </script>
+</body>
+
+</html>

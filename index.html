@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hook & Loop Creations</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <!-- <li><a href="mission-vision.html">Mission & Vision</a></li> -->
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+            <div class="logo">
+                <img class="logo-img" src="./assets/images/logo.png" alt="logo" width="20%" height="20%" />
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hook & Loop Creations</h1>
+            <p class="tagline">Premium Crochet & Handcrafted Creations</p>
+            <p>Handmade with Love</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- BESTSELLERS -->
+    <section class="best-sellers">
+        <h2>Our Best Sellers</h2>
+        <div class="products">
+            <div class="card">
+                <img src="./assets/images/crochet-1.png" alt="Single Crochet" />
+                <h3>Customized Single Crochet</h3>
+                <p>Beautiful handmade single crochet pieces, customizable to your preference.</p>
+                <a href="shop.html" class="btn-small">Shop Now</a>
+            </div>
+
+            <div class="card">
+                <img src="./assets/images/trio.jpg" alt="Trio" />
+                <h3>Crochet Trio</h3>
+                <p>A stunning collection of three coordinated crochet creations in perfect harmony.</p>
+                <a href="shop.html" class="btn-small">Shop Now</a>
+            </div>
+
+            <div class="card">
+                <img src="./assets/images/basket.jpg" alt="Basket Crochet" />
+                <h3>Basket Huggable Crochet</h3>
+                <p>Cozy and adorable crochet baskets, perfect for storage and decoration.</p>
+                <a href="shop.html" class="btn-small">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-content">
+            <h2>Crafted with Love</h2>
+            <p>
+                We create beautiful handmade crochet pieces made with care and
+                creativity.
+            </p>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <h2>Join Our Newsletter</h2>
+        <p>Get 20% off your first order!</p>
+        <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Hook & Loop Creations</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
